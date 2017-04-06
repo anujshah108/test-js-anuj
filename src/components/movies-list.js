@@ -14,6 +14,7 @@ export function MoviesList(props) {
           <td style={style.td}>Year</td>
           <td style={style.td}>Title</td>
           <td style={style.td}>Price</td>
+          <td style={style.td}>Rating</td>
         </tr>
       </thead>
       <tbody>
@@ -25,6 +26,7 @@ export function MoviesList(props) {
                 <td style={style.td}>{movie.releaseYear}</td>
                 <td style={style.td}>{movie.title}</td>
                 <td style={style.td}>{`$${movie.price}`}</td>
+                <td style={style.td}>{stars(movie.rating)}</td>
               </tr>
             )
           })
@@ -33,6 +35,16 @@ export function MoviesList(props) {
     </table>
   )
 }
+
+// function to create 'stars' of rating
+function stars(num){
+  let rating = ''
+  for(var i=0;i<num;i++){
+    rating += '*'
+  }
+  return rating
+}
+
 
 const mapStateToProps = state => {
   return {

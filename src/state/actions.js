@@ -11,9 +11,9 @@ export function getPopularMovies () {
   const yearObj = {}
 
 
-// Will loop throughout the combined array and first, get releaseYear of each movie and add it to the movie object and then push each movie to the corresponding year key in the yearObj, or create a year key with the first movie of that year within an array.
+// Will loop throughout the combined array and first, get releaseYear of each movie and add it to the movie object and then push each movie to the corresponding year key in the yearObj or create a year key with the first movie of that year within an array.
 
-//JavaScript automatically sorts numerical keys in an object therefore the sorting of years is done for is in this way.
+//JavaScript automatically sorts numerical keys in an object therefore the sorting of years is done for is in this way. Also allows for sorting of title within a year much easily.
 
   for(let i = 0;i<combinedResults.length;i++){
 
@@ -21,7 +21,7 @@ export function getPopularMovies () {
     let releaseYear = moment(combinedResults[i].releaseDate).format('YYYY')
     combinedResults[i]['releaseYear'] = releaseYear
 
-// lines 24 and 25 are optional in this case, filtering for 4 and 5 stars (all movies here are 5 stars) and removing the year in the title, respectively
+// lines 24 and 25 are optional in this case, filtering for 4 and 5 stars (all movies here are 5 stars) and removing the year in the title, respectively.
 //  combinedResults = combinedResults.filter(movie => movie.rating==5||movie.rating==4)
     combinedResults[i].title = combinedResults[i].title.split('(')[0].trim()
 
@@ -38,7 +38,7 @@ export function getPopularMovies () {
 // empty combinedResult to concat arrays of sorted titles by year
    combinedResults = []
 
-// iterate through each year in yearObj and sort the corresponding array by title and then concat the sorted array to the combined results. Years in yearObj are already sorted for us by JavaScript
+// iterate through each year in yearObj and sort the corresponding array by title and then concat the sorted array to the combined results. Years in yearObj are already sorted for us by JavaScript so the resultant array will be an array of movies sorted by year first and then title.
 
    for(var year in yearObj){
 
