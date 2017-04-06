@@ -11,9 +11,9 @@ export function MoviesList(props) {
       <thead>
         <tr>
           <td></td>
-          <td>Year</td>
-          <td>Title</td>
-          <td>Price</td>
+          <td style={style.td}>Year</td>
+          <td style={style.td}>Title</td>
+          <td style={style.td}>Price</td>
         </tr>
       </thead>
       <tbody>
@@ -21,10 +21,10 @@ export function MoviesList(props) {
           movies.map((movie, index) => {
             return (
               <tr key={index}>
-                <td><img src={movie.image} style={{height: '150px'}} /></td>
-                <td>{movie.releaseYear}</td>
-                <td>{movie.title}</td>
-                <td>{`$${movie.price}`}</td>
+                <td style={style.td}><img src={movie.image} style={{height: '150px'}} /></td>
+                <td style={style.td}>{movie.releaseYear}</td>
+                <td style={style.td}>{movie.title}</td>
+                <td style={style.td}>{`$${movie.price}`}</td>
               </tr>
             )
           })
@@ -37,6 +37,12 @@ export function MoviesList(props) {
 const mapStateToProps = state => {
   return {
     movies: state.movies
+  }
+}
+
+const style = {
+  td: {
+    border: '1px solid black'
   }
 }
 
