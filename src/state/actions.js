@@ -16,7 +16,7 @@ export function getPopularMovies () {
 
 // Will loop throughout the combined array and first, get releaseYear of each movie and add it to the movie object and then push each movie to the corresponding year key in the yearObj or create a year key with the first movie of that year within an array.
 
-//JavaScript automatically sorts numerical keys in an object therefore the sorting of years is done for us in this way. Also allows for sorting of title within a year much easily.
+//JavaScript automatically sorts numerical keys in an object therefore the sorting of years is done for us in this way. Also allows for sorting of title within a year to be much easier.
 
   for(let i = 0;i<combinedResults.length;i++){
 
